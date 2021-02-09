@@ -1,5 +1,6 @@
 class Devise::ParanoidVerificationCodeController < DeviseController
   skip_before_action :handle_paranoid_verification
+  skip_before_action :redirect_to_ca_learner
   prepend_before_action :authenticate_scope!, :only => [:show, :update]
 
   def show
